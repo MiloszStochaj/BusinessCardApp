@@ -1,22 +1,18 @@
-
-
-.home{
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 30rem;
-    width: auto;
-    border: 1px solid black;
+.home {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.navigation{
-    display: flex;
-    justify-content: space-between;
+.navigation {
+  display: flex;
+  justify-content: space-between;
 }
 
-button{
-    margin: 1rem;
-    width: 10rem;
+button {
+  margin: 1rem;
+  width: 10rem;
 }

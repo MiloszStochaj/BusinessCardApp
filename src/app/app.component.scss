@@ -2,13 +2,11 @@
   display: block;
 }
 
-mat-toolbar {
-  display: flex;
-  justify-content: space-between;
+
+.spacer {
+  flex: 1 1 auto;
 }
 
-.links a{
-    padding: 1rem;
-    text-decoration: none;
-    color: inherit;
+mat-toolbar{
+  padding: 0 4rem;
 }
