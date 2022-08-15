@@ -3,11 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BusinessCardComponent } from './business-card/business-card.component';
 import { CardFormComponent } from './card-form/card-form.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    component: HomeComponent,
   },
   {
     path: 'businnesCard',
