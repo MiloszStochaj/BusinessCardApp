@@ -1,5 +1,6 @@
 .home {
   text-align: center;
+  width: 100%;
   margin: 0;
   position: absolute;
   top: 50%;
@@ -7,12 +8,13 @@
   transform: translate(-50%, -50%);
 }
 
-.navigation {
-  display: flex;
-  justify-content: space-between;
-}
+
 
 button {
-  margin: 1rem;
+  margin: 2rem;
   width: 10rem;
+}
+
+h1{
+  font-family: 'Source Code Pro', monospace;
 }
