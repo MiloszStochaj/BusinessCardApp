@@ -10,3 +10,14 @@ export let fade = trigger('fade', [
     
 
   ]);
+
+  export let slide = trigger('slide', [
+    state('void', style({bottom:30})),
+    transition('void <=> *', [
+      
+      animate(800)
+    ]),
+
+    
+
+  ]);
