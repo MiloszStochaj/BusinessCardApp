@@ -1,20 +1,22 @@
-.card__form {
+:host {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.back__button {
+  position: absolute;
+  margin: 2rem;
+}
+
+.form {
+  text-align: center;
   margin: 0;
   position: absolute;
   bottom: 50%;
   left: 50%;
   transform: translate(-50%, 50%);
-  width: 90%;
-  height: 30rem;
-  padding: 2rem;
-}
-
-.form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 1rem;
   padding: 2rem 4rem;
   border: 1px solid black;
   border-radius: 10px;

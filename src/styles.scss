@@ -1,24 +1,29 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 @include mat.core();
-
 
 $my-primary: mat.define-palette(mat.$purple-palette, 500);
 $my-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
 $my-warn: mat.define-palette(mat.$red-palette);
 
-$my-theme: mat.define-light-theme((
- color: (
-   primary: $my-primary,
-   accent: $my-accent,
-   warn: $my-warn,
- )
-));
+$my-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+      warn: $my-warn,
+    ),
+  )
+);
 
 @include mat.all-component-themes($my-theme);
 @include mat.strong-focus-indicators-theme(purple);
 
-
-html, body { height: 100%;   overflow-y: hidden;
-  overflow-x: hidden;}
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  touch-action: none;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
