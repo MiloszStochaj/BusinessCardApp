@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { fade, slide } from '../animations';
-import { Data } from '../model/data';
+import { Card } from '../model/card';
+import {CardService} from '../services/card.service'
 
 
 @Component({
@@ -15,22 +16,36 @@ import { Data } from '../model/data';
 })
 export class CardFormComponent implements OnInit {
 
-data: Data[] = [];
+constructor(private cardService: CardService) { }
+
+
+//Data 
+public cards: Card[] = [];
 public name: string = '';
 public companyName: string = '';
 public emailName: string = '';
 public phoneNumber: string = ''
 
-getValue(){
-  const data: Data = {
+public addCard(){
+  const card: Card = {
   name: this.name,
   companyName: this.companyName,
   email: this.emailName,
   phoneNumber: this.phoneNumber,
-  }
-  console.log(data)
+  };
+  console.log(card)
+  this.cards.push(card)
+
+  this.cardService.saveCards(this.cards)
 }
 
+public removeAll() {
+  this.cards = [];
+  this.cardService.saveCards(this.cards);
+}
+
+
+//Validators 
   email = new FormControl('', [Validators.required, Validators.email]);
   phone = new FormControl('', [Validators.required, Validators.minLength(9)])
 
@@ -51,9 +66,9 @@ getValue(){
   }
   
 
-  constructor() { }
 
   ngOnInit(): void {
+    this.cards = this.cardService.loadCard()
   }
 
 }

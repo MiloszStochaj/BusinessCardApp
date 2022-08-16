@@ -5,10 +5,20 @@
   flex-direction: column;
 }
 
-.back__button {
-  position: absolute;
-  margin: 2rem;
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 48;
 }
+
+
+.back__button {
+  position: inherit;
+  margin: 1rem;
+}
+
+button{
+  margin:1rem;
+}
+
 
 .form {
   text-align: center;
@@ -22,6 +32,3 @@
   border-radius: 10px;
 }
 
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-}

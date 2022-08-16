@@ -1,6 +1,9 @@
 <div class="back__button" @fade>
   <a routerLink="/"
-    ><button mat-raised-button color="accent"><mat-icon fontIcon="undo"></mat-icon></button
+    ><button mat-raised-button color="accent"><mat-icon class="material-symbols-outlined" fontIcon="home"></mat-icon></button
+  ></a>
+  <a routerLink="/businnesCard"
+    ><button mat-raised-button color="accent">Go to my cards</button
   ></a>
 </div>
 
@@ -47,5 +50,7 @@
       <mat-error *ngIf="phone.invalid">{{ getErrorPhoneMessage() }}</mat-error>
     </mat-form-field>
   </p>
-  <button mat-raised-button color="primary" (click)="getValue()">Create business card</button>
+  <button mat-raised-button color="primary" (click)="addCard()">Create business card</button>
+  <button mat-raised-button color="primary" (click)="removeAll()">Remove all</button>
 </div>
+
