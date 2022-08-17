@@ -12,7 +12,7 @@
   margin: 1rem;
 }
 
-button {
+.navigation__button {
   margin: 1rem;
 }
 
@@ -24,32 +24,41 @@ button {
 }
 
 .card {
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 8px 8px 22px -12px rgba(66, 68, 90, 1);
   border-radius: 10px;
-  padding: 1rem;
+  padding: 0.5rem;
   transition: transform 0.2s;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 0.5rem;
-  grid-template-areas:
-    "company name name"
-    "company email email"
-    "company number number";
+  display: flex;
 }
 
 .card:hover {
   transform: scale(1.05);
 }
 
+.data{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  // gap: 0.5rem;
+  grid-template-areas:
+    "company name name delete"
+    "company email email email"
+    "company number number favourite";
+  align-items: center;
+  padding: 0.5rem;
+  // border: 1px solid black;
+}
+
+
 .company__name {
+  color: purple;
   font-size: 2rem;
   line-height: 2rem;
   font-weight: 100;
-  text-decoration: underline;
   grid-area: company;
   text-align: center;
-  // padding: 1rem;
+
 }
 
 .name {
@@ -65,3 +74,19 @@ button {
 .phone__number {
   grid-area: number;
 }
+
+.favourite{
+  margin:0;
+  grid-area: favourite;
+}
+
+.favourite:focus{
+  background-color: black;
+}
+
+.delete{
+  grid-area: delete;
+}
+
+
+

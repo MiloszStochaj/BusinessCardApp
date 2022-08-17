@@ -1,18 +1,34 @@
 <div class="back__button" @fade>
   <a routerLink="/"
-    ><button mat-raised-button color="accent"><mat-icon class="material-symbols-outlined" fontIcon="home"></mat-icon></button
+    ><button class="navigation__button" mat-raised-button color="accent"><mat-icon class="material-symbols-outlined" fontIcon="home"></mat-icon></button
   ></a>
   <a routerLink="/cardForm"
-    ><button mat-raised-button color="accent">Go to card generator</button
+    ><button class="navigation__button" mat-raised-button color="accent">Go to card generator</button
   ></a>
 </div>
     
 
 <div class="business__cards" @fade>
   <div *ngFor="let card of cards" class="card">
-    <p class="name">{{ card.name }}</p>
-      <p class="company__name">{{ card.companyName }}</p>
-      <p class="email">{{ card.email }}</p>
-      <p class="phone__number">{{ card.phoneNumber }}</p>
+    <div class="data">
+      <p class="name">{{ card.name }}</p>
+        <p class="company__name">{{ card.companyName }}</p>
+        <p class="email">{{ card.email }}</p>
+        <p class="phone__number">{{ card.phoneNumber }}</p>
+        <p class="delete">asd</p>
+        <button mat-icon-button class="favourite" color="accent" aria-label="icon button with a heart icon">
+          <mat-icon class="material-symbols-outlined">favorite</mat-icon>
+        </button>
+    </div>
+    <!-- <div class="buttons">
+      <button mat-icon-button class="favourite" color="accent" aria-label="icon button with a heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <p class="delete">asd</p>
+     
+      <p class="favourite">asd</p>
+    </div> -->
+     
   </div>
+
 </div>
