@@ -18,8 +18,9 @@
 
 .business__cards {
   margin: 2rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   gap: 2rem;
 }
 
@@ -29,27 +30,25 @@
   border-radius: 10px;
   padding: 0.5rem;
   transition: transform 0.2s;
-  display: flex;
+  width: 25rem;
 }
 
 .card:hover {
   transform: scale(1.05);
 }
 
-.data{
+.data {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  // gap: 0.5rem;
+  gap: 0.5rem;
   grid-template-areas:
     "company name name delete"
     "company email email email"
     "company number number favourite";
   align-items: center;
+  justify-items: start;
   padding: 0.5rem;
-  // border: 1px solid black;
 }
-
 
 .company__name {
   color: purple;
@@ -58,7 +57,6 @@
   font-weight: 100;
   grid-area: company;
   text-align: center;
-
 }
 
 .name {
@@ -75,18 +73,15 @@
   grid-area: number;
 }
 
-.favourite{
-  margin:0;
+.favourite {
+  margin: 0;
   grid-area: favourite;
 }
 
-.favourite:focus{
+.favourite:focus {
   background-color: black;
 }
 
-.delete{
+.delete {
   grid-area: delete;
 }
-
-
-
