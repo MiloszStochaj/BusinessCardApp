@@ -13,10 +13,13 @@ import {CardService} from '../services/card.service'
 export class BusinessCardComponent implements OnInit {
   public cards: Card[] = [];
 
+
+
+
   constructor(private cardService: CardService) { }
 
   ngOnInit(): void {
-    this.cards = this.cardService.loadCard()
+    this.cards = this.cardService.loadCard();
   }
-
 }
+
