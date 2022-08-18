@@ -3,4 +3,5 @@ export interface Card {
   companyName: string;
   email: string;
   phoneNumber: string;
+  favourite: boolean;
 }

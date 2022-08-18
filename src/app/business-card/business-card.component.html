@@ -1,28 +1,74 @@
 <div class="back__button" @fade>
   <a routerLink="/"
-    ><button class="navigation__button" mat-raised-button color="accent"><mat-icon class="material-symbols-outlined" fontIcon="home"></mat-icon></button
+    ><button class="navigation__button" mat-raised-button color="accent">
+      <mat-icon
+        class="material-symbols-outlined"
+        fontIcon="home"
+      ></mat-icon></button
   ></a>
   <a routerLink="/cardForm"
-    ><button class="navigation__button" mat-raised-button color="accent">Go to card generator</button
-  ></a>
+    ><button class="navigation__button" mat-raised-button color="accent">
+      Go to card generator
+    </button></a
+  >
 </div>
-    
 
-  <div class="business__cards" @fade>
-    <div *ngFor="let card of cards" class="card" >
-      <div class="data">
-        <p class="name">{{ card.name }}</p>
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="All">
+    <div class="business__cards" @fade>
+      <div *ngFor="let card of cards" class="card">
+        <div class="data">
+          <p class="name">{{ card.name }}</p>
           <p class="company__name">{{ card.companyName }}</p>
           <p class="email">{{ card.email }}</p>
           <p class="phone__number">{{ card.phoneNumber }}</p>
           <p class="delete">asd</p>
-          <button mat-icon-button class="favourite" color="accent" aria-label="icon button with a heart icon">
-            <mat-icon class="material-symbols-outlined">favorite</mat-icon>
+          <button
+            mat-icon-button
+            class="favourite"
+            color="accent"
+            aria-label="icon button with a heart icon"
+            (click)="setFavourite(card)"
+            [ngClass]="{ favourite__active: card.favourite }"
+          >
+            <mat-icon
+              class="material-symbols-outlined outlined-favourite"
+              [ngClass]="{ favourite__active: card.favourite }"
+              >favorite</mat-icon
+            >
           </button>
+        </div>
       </div>
-    
     </div>
-  </div>
+    
+  </mat-tab>
+  <mat-tab label="Favourites">
+    <div class="business__cards" @fade>
+      <div *ngFor="let card of cards" class="card" [ngClass]="{ hide: !card.favourite }">
+        <div class="data">
+          <p class="name">{{ card.name }}</p>
+          <p class="company__name">{{ card.companyName }}</p>
+          <p class="email">{{ card.email }}</p>
+          <p class="phone__number">{{ card.phoneNumber }}</p>
+          <p class="delete">asd</p>
+          <button
+            mat-icon-button
+            class="favourite"
+            color="accent"
+            aria-label="icon button with a heart icon"
+            (click)="setFavourite(card)"
+            [ngClass]="{ favourite__active: card.favourite }"
+          >
+            <mat-icon
+              class="material-symbols-outlined outlined-favourite"
+              [ngClass]="{ favourite__active: card.favourite }"
+              >favorite</mat-icon
+            >
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
 
-  
+</mat-tab-group>
 

@@ -14,6 +14,15 @@ export class BusinessCardComponent implements OnInit {
   public cards: Card[] = [];
 
 
+  public setFavourite(card: Card){
+    if(card.favourite === false){
+      card.favourite = true;
+    }else if(card.favourite === true) {
+      card.favourite = false;
+    }
+    this.cardService.saveCards(this.cards);
+    console.log(card)
+  }
 
 
   constructor(private cardService: CardService) { }

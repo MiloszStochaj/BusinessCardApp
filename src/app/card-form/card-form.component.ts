@@ -32,6 +32,7 @@ public addCard(){
   companyName: this.companyName,
   email: this.emailName,
   phoneNumber: this.phoneNumber,
+  favourite:false,
   };
   console.log(card)
   this.cards.push(card)
