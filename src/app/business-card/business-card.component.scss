@@ -88,7 +88,11 @@
   font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 48;
 }
 
-.hide {
+.hide__favorite {
+  display: none;
+}
+
+.hide__delete{
   display: none;
 }
 

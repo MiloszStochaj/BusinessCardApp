@@ -16,7 +16,7 @@
 <mat-tab-group mat-align-tabs="center">
   <mat-tab label="All">
     <div class="business__cards" @fade>
-      <div *ngFor="let card of cards" class="card" [ngClass]="{ hide: card.remove }">
+      <div *ngFor="let card of cards" class="card" [ngClass]="{ hide__delete: card.remove }">
         <div class="data">
           <p class="name">{{ card.name }}</p>
           <p class="company__name">{{ card.companyName }}</p>
@@ -58,7 +58,8 @@
       <div
         *ngFor="let card of cards"
         class="card"
-        [ngClass]="{ hide: !card.favorite }"
+        [ngClass]="{ hide__favorite: !card.favorite, hide__delete: card.remove  }"
+        
       >
         <div class="data">
           <p class="name">{{ card.name }}</p>
@@ -102,7 +103,7 @@
       <div
         *ngFor="let card of cards"
         class="card"
-        [ngClass]="{ hide: !card.remove }"
+        [ngClass]="{ hide__delete: !card.remove }"
       >
         <div class="data">
           <p class="name">{{ card.name }}</p>
@@ -123,19 +124,7 @@
               <span>Delete Forever</span>
             </button>
           </mat-menu>
-          <button
-            mat-icon-button
-            class="favorite"
-            color="accent"
-            aria-label="icon button with a heart icon"
           
-          >
-            <mat-icon
-              class="material-symbols-outlined outlined-favorite"
-          
-              >favorite</mat-icon
-            >
-          </button>
         </div>
       </div>
     </div>
