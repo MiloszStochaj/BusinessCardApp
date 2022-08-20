@@ -45,7 +45,7 @@
   grid-template-areas:
     "company name name delete"
     "company email email email"
-    "company number number favourite";
+    "company number number favorite";
   align-items: center;
   justify-items: start;
   padding: 0.5rem;
@@ -74,16 +74,16 @@
   grid-area: number;
 }
 
-.favourite {
+.favorite {
   margin: 0;
-  grid-area: favourite;
+  grid-area: favorite;
 }
 
-.outlined-favourite {
+.outlined-favorite {
   font-variation-settings: "FILL" 0, "wght" 900, "GRAD" 0, "opsz" 48;
 }
 
-.favourite__active {
+.favorite__active {
   background-color: black;
   font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 48;
 }

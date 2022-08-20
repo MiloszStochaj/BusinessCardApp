@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     ReactiveFormsModule,
     MatInputModule,
     MatTabsModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

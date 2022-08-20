@@ -22,46 +22,73 @@
           <p class="company__name">{{ card.companyName }}</p>
           <p class="email">{{ card.email }}</p>
           <p class="phone__number">{{ card.phoneNumber }}</p>
-          <p class="delete">asd</p>
+          <button mat-icon-button class="delete" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>delete_sweep</mat-icon>
+              <span>Move to Bin</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>delete_forever</mat-icon>
+              <span>Delete Forever</span>
+            </button>
+          </mat-menu>
           <button
             mat-icon-button
-            class="favourite"
+            class="favorite"
             color="accent"
             aria-label="icon button with a heart icon"
-            (click)="setFavourite(card)"
-            [ngClass]="{ favourite__active: card.favourite }"
+            (click)="setfavorite(card)"
+            [ngClass]="{ favorite__active: card.favorite }"
           >
             <mat-icon
-              class="material-symbols-outlined outlined-favourite"
-              [ngClass]="{ favourite__active: card.favourite }"
+              class="material-symbols-outlined outlined-favorite"
+              [ngClass]="{ favorite__active: card.favorite }"
               >favorite</mat-icon
             >
           </button>
         </div>
       </div>
     </div>
-    
   </mat-tab>
-  <mat-tab label="Favourites">
+  <mat-tab label="Favorites">
     <div class="business__cards" @fade>
-      <div *ngFor="let card of cards" class="card" [ngClass]="{ hide: !card.favourite }">
+      <div
+        *ngFor="let card of cards"
+        class="card"
+        [ngClass]="{ hide: !card.favorite }"
+      >
         <div class="data">
           <p class="name">{{ card.name }}</p>
           <p class="company__name">{{ card.companyName }}</p>
           <p class="email">{{ card.email }}</p>
           <p class="phone__number">{{ card.phoneNumber }}</p>
-          <p class="delete">asd</p>
+          <button mat-icon-button class="delete" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>delete_sweep</mat-icon>
+              <span>Move to Bin</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>delete_forever</mat-icon>
+              <span>Delete Forever</span>
+            </button>
+          </mat-menu>
           <button
             mat-icon-button
-            class="favourite"
+            class="favorite"
             color="accent"
             aria-label="icon button with a heart icon"
-            (click)="setFavourite(card)"
-            [ngClass]="{ favourite__active: card.favourite }"
+            (click)="setfavorite(card)"
+            [ngClass]="{ favorite__active: card.favorite }"
           >
             <mat-icon
-              class="material-symbols-outlined outlined-favourite"
-              [ngClass]="{ favourite__active: card.favourite }"
+              class="material-symbols-outlined outlined-favorite"
+              [ngClass]="{ favorite__active: card.favorite }"
               >favorite</mat-icon
             >
           </button>
@@ -69,6 +96,7 @@
       </div>
     </div>
   </mat-tab>
-
+  <mat-tab label="Bin">
+    
+  </mat-tab>
 </mat-tab-group>
-
