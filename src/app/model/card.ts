@@ -4,4 +4,5 @@ export interface Card {
   email: string;
   phoneNumber: string;
   favorite: boolean;
+  remove: boolean;
 }

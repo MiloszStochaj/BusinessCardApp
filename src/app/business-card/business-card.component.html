@@ -16,7 +16,7 @@
 <mat-tab-group mat-align-tabs="center">
   <mat-tab label="All">
     <div class="business__cards" @fade>
-      <div *ngFor="let card of cards" class="card">
+      <div *ngFor="let card of cards" class="card" [ngClass]="{ hide: card.remove }">
         <div class="data">
           <p class="name">{{ card.name }}</p>
           <p class="company__name">{{ card.companyName }}</p>
@@ -26,7 +26,7 @@
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>
+            <button mat-menu-item (click)="moveToBin(card)">
               <mat-icon>delete_sweep</mat-icon>
               <span>Move to Bin</span>
             </button>
@@ -69,7 +69,8 @@
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu">
-            <button mat-menu-item>
+            <button mat-menu-item (click)="moveToBin(card)"
+            >
               <mat-icon>delete_sweep</mat-icon>
               <span>Move to Bin</span>
             </button>
@@ -97,6 +98,47 @@
     </div>
   </mat-tab>
   <mat-tab label="Bin">
+    <div class="business__cards" @fade>
+      <div
+        *ngFor="let card of cards"
+        class="card"
+        [ngClass]="{ hide: !card.remove }"
+      >
+        <div class="data">
+          <p class="name">{{ card.name }}</p>
+          <p class="company__name">{{ card.companyName }}</p>
+          <p class="email">{{ card.email }}</p>
+          <p class="phone__number">{{ card.phoneNumber }}</p>
+          <button mat-icon-button class="delete" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="moveToBin(card)"
+            >
+              <mat-icon>restore_from_trash</mat-icon>
+              <span>Restore from Trash</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>delete_forever</mat-icon>
+              <span>Delete Forever</span>
+            </button>
+          </mat-menu>
+          <button
+            mat-icon-button
+            class="favorite"
+            color="accent"
+            aria-label="icon button with a heart icon"
+          
+          >
+            <mat-icon
+              class="material-symbols-outlined outlined-favorite"
+          
+              >favorite</mat-icon
+            >
+          </button>
+        </div>
+      </div>
+    </div>
     
   </mat-tab>
 </mat-tab-group>

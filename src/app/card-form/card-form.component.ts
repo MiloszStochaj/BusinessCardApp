@@ -27,6 +27,7 @@ export class CardFormComponent implements OnInit {
       email: this.emailName,
       phoneNumber: this.phoneNumber,
       favorite: false,
+      remove: false,
     };
     console.log(card);
     this.cards.push(card);

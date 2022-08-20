@@ -22,6 +22,16 @@ export class BusinessCardComponent implements OnInit {
     console.log(card);
   }
 
+  public moveToBin(card: Card) {
+    if (card.remove === false) {
+      card.remove = true;
+    } else if (card.remove=== true) {
+      card.remove = false;
+    }
+    this.cardService.saveCards(this.cards);
+    console.log(card);
+  }
+
   constructor(private cardService: CardService) {}
 
   ngOnInit(): void {
