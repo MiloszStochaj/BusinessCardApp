@@ -29,16 +29,13 @@ export class CardFormComponent implements OnInit {
       favorite: false,
       remove: false,
     };
-    console.log(card);
+    
     this.cards.push(card);
 
     this.cardService.saveCards(this.cards);
   }
 
-  public removeAll() {
-    this.cards = [];
-    this.cardService.saveCards(this.cards);
-  }
+ 
 
   //Validators
   email = new FormControl('', [Validators.required, Validators.email]);

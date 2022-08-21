@@ -19,17 +19,24 @@ export class BusinessCardComponent implements OnInit {
       card.favorite = false;
     }
     this.cardService.saveCards(this.cards);
-    console.log(card);
+
   }
 
   public moveToBin(card: Card) {
     if (card.remove === false) {
       card.remove = true;
-    } else if (card.remove=== true) {
+    } else if (card.remove === true) {
       card.remove = false;
     }
     this.cardService.saveCards(this.cards);
-    console.log(card);
+ 
+  }
+
+  public deleteCard(card: Card){
+    const index = this.cards.indexOf(card);
+    this.cards.splice(index,1);
+
+    this.cardService.saveCards(this.cards);
   }
 
   constructor(private cardService: CardService) {}
