@@ -1,11 +1,9 @@
 :host {
   display: flex;
   flex-direction: column;
+  touch-action: none;
 }
 
-input{
-  font-size: 1.3rem;
-}
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 48;
@@ -20,7 +18,7 @@ button {
 }
 
 .form {
-  margin-top: 3rem;
+
   text-align: center;
   flex-grow: 1;
 }
