@@ -51,7 +51,7 @@
         <mat-error *ngIf="phone.invalid">{{ getErrorPhoneMessage() }}</mat-error>
       </mat-form-field>
     </p>
-    <button mat-raised-button color="primary" [disabled]="!name || !companyName || !emailName && !phoneNumber" (click)="addCard()" (click)="onCreateButtonClick()">Create business card</button>
+    <button mat-raised-button color="primary" [disabled]="!name || !companyName || !emailName && !phoneNumber || email.invalid" (click)="addCard()" (click)="onCreateButtonClick()">Create business card</button>
   </div>
   
 </div>
