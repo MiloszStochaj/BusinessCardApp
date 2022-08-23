@@ -16,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatInputModule,
     MatTabsModule,
     MatMenuModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

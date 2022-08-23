@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { fade, slide } from '../animations';
 import { Card } from '../model/card';
 import { CardService } from '../services/card.service';
@@ -11,7 +12,7 @@ import { CardService } from '../services/card.service';
   animations: [fade, slide],
 })
 export class CardFormComponent implements OnInit {
-  constructor(private cardService: CardService) {}
+  constructor(private cardService: CardService, private matSnackBar: MatSnackBar) {}
 
   //Data
   public cards: Card[] = [];
@@ -55,6 +56,15 @@ export class CardFormComponent implements OnInit {
     }
 
     return this.phone.hasError('phone') ? 'Not a valid phone number' : '';
+  }
+
+  // Snack Bar 
+  onCreateButtonClick() {
+    this.matSnackBar.open('The business card has been created', 'Close', {
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+      duration: 3000,
+    });
   }
 
   ngOnInit(): void {

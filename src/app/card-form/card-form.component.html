@@ -8,49 +8,51 @@
 </div>
 
 <div class="form" @slide @fade>
-  <p>
-    <mat-form-field appearance="standard">
-      <mat-label>Name and last name</mat-label>
-      <input matInput [(ngModel)]="name" required />
-      <mat-icon class="material-symbols-outlined" matSuffix>badge</mat-icon>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="standard">
-      <mat-label>Company name</mat-label>
-      <input matInput [(ngModel)]="companyName" required />
-      <mat-icon class="material-symbols-outlined" matSuffix>store</mat-icon>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="standard">
-      <mat-label>Enter email</mat-label>
-      <input
-        matInput
-        [(ngModel)]="emailName"
-        placeholder="youremail@example.com"
-        [formControl]="email"
-        required
-      />
-      <mat-icon class="material-symbols-outlined" matSuffix>mail</mat-icon>
-      <mat-error *ngIf="email.invalid">{{ getErrorEmailMessage() }}</mat-error>
-    </mat-form-field>
-  </p>
-  <p>
-    <mat-form-field appearance="standard">
-      <mat-label>Enter phone number</mat-label>
-      <input
-        matInput
-        [(ngModel)]="phoneNumber"
-        placeholder="000-000-000"
-        [formControl]="phone"
-        required
-      />
-      <mat-icon class="material-symbols-outlined" matSuffix>contact_phone</mat-icon>
-      <mat-error *ngIf="phone.invalid">{{ getErrorPhoneMessage() }}</mat-error>
-    </mat-form-field>
-  </p>
-  <button mat-raised-button color="primary" (click)="addCard()">Create business card</button>
+  <div class="form__box" >
+    <p>
+      <mat-form-field appearance="standard">
+        <mat-label>Name and last name</mat-label>
+        <input matInput [(ngModel)]="name" (keyup.enter)="addCard()" required />
+        <mat-icon class="material-symbols-outlined" matSuffix>badge</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="standard">
+        <mat-label>Company name</mat-label>
+        <input matInput [(ngModel)]="companyName" required />
+        <mat-icon class="material-symbols-outlined" matSuffix>store</mat-icon>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="standard">
+        <mat-label>Enter email</mat-label>
+        <input
+          matInput
+          [(ngModel)]="emailName"
+          placeholder="youremail@example.com"
+          [formControl]="email"
+          required
+        />
+        <mat-icon class="material-symbols-outlined" matSuffix>mail</mat-icon>
+        <mat-error *ngIf="email.invalid">{{ getErrorEmailMessage() }}</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="standard">
+        <mat-label>Enter phone number</mat-label>
+        <input
+          matInput
+          [(ngModel)]="phoneNumber"
+          placeholder="000-000-000"
+          [formControl]="phone"
+          required
+        />
+        <mat-icon class="material-symbols-outlined" matSuffix>contact_phone</mat-icon>
+        <mat-error *ngIf="phone.invalid">{{ getErrorPhoneMessage() }}</mat-error>
+      </mat-form-field>
+    </p>
+    <button mat-raised-button color="primary" [disabled]="!name || !companyName || !emailName && !phoneNumber" (click)="addCard()" (click)="onCreateButtonClick()">Create business card</button>
+  </div>
   
 </div>
 
